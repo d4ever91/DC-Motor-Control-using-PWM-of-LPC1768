@@ -1,0 +1,30 @@
+In most of the applications controlling the speed of DC motor is essential where the precision and protection are the essence. 
+Here we will use the PWM technique to control the speed of the motor. 
+
+LPC1768 has one PWM channel with six ports. PWM changes the average output voltage by fast switching. By changing the on time, the output voltage can be 0 to 100%. There are two software parameters that need a little explanation: cycle and offset. Cycle is the length of a PWM duty cycle and offset is the on time of a duty cycle.
+
+For example: when the cycle time is 1000 and the offset:
+
+0, the output voltage = 0%
+
+255, the output voltage = 25.5%
+
+1000, the output voltage = 100%
+
+PWM REGISTERS:
+
+The registers associated with LPC1768 ADC are
+
+IR-> Interrupt Register: The IR can be written to clear interrupts. The IR can be read to identify which of eight possible interrupt sources are pending.
+
+TCR-> Timer Control Register: The TCR is used to control the Timer Counter functions. The Timer Counter can be disabled or reset through the TCR.
+
+PR- > Prescale Register: The TC is incremented every PR+1 cycles of PCLK.
+
+MCR-> Match Control Register: The MCR is used to control if an interrupt is generated and if the TC is reset when a Match occurs.
+
+MR0 – MR6-> Match Register: Each can be enabled in the MCR to reset the TC, stop both the TC and PC, and/or generate an interrupt when it matches the TC.
+
+PCR-> PWM Control Register: Enables PWM outputs and selects PWM channel types as either single edge or double edge controlled.
+
+LCR-> Load Enable Register: Enables use of new PWM match values.
