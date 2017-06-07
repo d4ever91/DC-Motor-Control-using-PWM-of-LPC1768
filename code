@@ -1,0 +1,21 @@
+to get the detail code 
+contact 
+daljitsingh101@gmail.com
+
+Here the Library PWM.C is used to configure all the PWM functions and ADC is used as per the previous tutorial.
+
+PWM_Init( CHANNEL_NUM, cycle );
+
+PWM_Set( CHANNEL_NUM, cycle, offset );
+
+PWM_Start( CHANNEL_NUM );
+
+These are the functions used for our application. Here CHANNEL NUM macro defines 1.
+
+offset = adc_result/4;
+
+The adc_result is divided by 4 to get the output from 0 to 1000 to the offset.
+
+PWM_Set( CHANNEL_NUM, cycle, offset );
+
+This is the function to set the PWM in the output pin.
